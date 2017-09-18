@@ -7,7 +7,7 @@ provider "google" {
 terraform {
   backend "gcs" {
     bucket = "glds-terraform-remote-state-storage"
-    path = "k8s-infra-live/terraform.tfstate"
+    path = "k8s-infra-live-prod/terraform.tfstate"
     project = "glds-gcp"
   }
 }
