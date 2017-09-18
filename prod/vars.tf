@@ -4,6 +4,4 @@ variable "project" {
 variable "region" {
   default = "us-west1"
 }
-variable "node_count" {
-  description = "How many nodes do you want to create?"
-}
+

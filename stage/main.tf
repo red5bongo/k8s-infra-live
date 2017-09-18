@@ -12,18 +12,9 @@ terraform {
   }
 }
 
-resource "google_compute_instance" "default" {
-  count = "${var.node_count}"
-  name           = "terraform-node${count.index}"
-  machine_type   = "g1-small"
-  zone		 = "us-west1-a"
-  tags = ["terraform"]
-  boot_disk {
-    initialize_params {
-      image = "ubuntu-1704-zesty-v20170811"
-      }
-  }
-  network_interface {
-    network = "default"
-  }
+module "node-minion" {
+  source = "/home/vagrant/k8s-terraform/k8s-infra-modules/node-minion"
+
+  node_count = 2
+
 }
