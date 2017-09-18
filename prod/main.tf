@@ -19,6 +19,10 @@ module "node-minion" {
 
 }
 
+module "node-master" {
+  source = "/home/vagrant/k8s-terraform/k8s-infra-modules/node-master"
+}
+
 
 
 
