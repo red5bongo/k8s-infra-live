@@ -13,8 +13,11 @@ terraform {
 }
 
 module "node-minion" {
-  source = "/home/vagrant/k8s-terraform/k8s-infra-modules/node-minion"
+  source = "github.com/red5bongo/k8s-infra-modules//node-minion?ref=v0.0.1"
 
   node_count = 2
+}
 
+module "node-master" {
+  source = "github.com/red5bongo/k8s-infra-modules//node-master?ref=v0.0.1"
 }
