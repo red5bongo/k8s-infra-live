@@ -3,6 +3,16 @@ provider "google" {
   region      = "${var.region}"
 }
 
+#configure remote state
+
+terraform {
+  backend "gcs" {
+    bucket = "glds-k8s-remote-state-stage"
+    path = "vpc_stage/terraform.tfstate"
+    project = "glds-gcp"
+  }
+}
+
 #create the VPC for the staging environment
 
 resource "google_compute_network" "default" {

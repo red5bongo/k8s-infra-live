@@ -3,6 +3,8 @@ provider "google" {
   region      = "${var.region}"
 }
 
+#configure remote state
+
 terraform {
   backend "gcs" {
     bucket = "glds-terraform-remote-state-storage"
