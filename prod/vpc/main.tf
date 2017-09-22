@@ -3,6 +3,16 @@ provider "google" {
   region      = "${var.region}"
 }
 
+#configure remote state
+
+terraform {
+  backend "gcs" {
+    bucket = "glds-k8s-remote-state-prod"
+    path = "vpc_prod/terraform.tfstate"
+    project = "glds-gcp"
+  }
+}
+
 #create the VPC for the production environment
 
 resource "google_compute_network" "default" {

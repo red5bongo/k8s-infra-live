@@ -4,7 +4,7 @@ provider "google" {
 }
 
 resource "google_storage_bucket" "remote_state" {
-  name 		= "glds-k8s-remote-state-prod"
+  name 		= "glds-k8s-remote-state-stage"
   storage_class	= "REGIONAL" 
   location	= "${var.region}" 
 }
