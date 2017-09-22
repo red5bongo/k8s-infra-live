@@ -20,10 +20,12 @@ module "node-minion" {
 #subnet name comes from VPC outputs file  
   subnetwork = "https://www.googleapis.com/compute/v1/projects/glds-gcp/regions/us-west1/subnetworks/k8s-subnet-stage"
   node_count = 2
+  name = "worker"
 }
 
 module "node-master" {
   source = "github.com/red5bongo/k8s-infra-modules//node-master"
 
+  name = "controller"
   subnetwork = "https://www.googleapis.com/compute/v1/projects/glds-gcp/regions/us-west1/subnetworks/k8s-subnet-stage"
 }
