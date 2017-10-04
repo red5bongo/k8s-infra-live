@@ -30,7 +30,7 @@ resource "google_compute_subnetwork" "default" {
   region	= "us-west1"
 }
 
-#Create a firewall rule allowing SSH
+#Create a firewall rule allowing SSH!
 
 resource "google_compute_firewall" "default" {
   name		= "staging-firewall"
@@ -44,4 +44,3 @@ resource "google_compute_firewall" "default" {
   }
   source_ranges = ["0.0.0.0/0"]
 }
-    
