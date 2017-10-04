@@ -12,8 +12,10 @@ terraform {
     project = "glds-gcp"
   }
 }
-data "terraform-remote-state" "vpc" {
-  backend   = "gcs" {
+data "terraform_remote_state" "vpc" {
+  backend   = "gcs"
+
+  config {
     bucket  = "glds-k8s-remote-state-stage"
     path    = "vpc_stage/terraform.tfstate"
     project = "glds-gpc"
@@ -23,8 +25,8 @@ data "terraform-remote-state" "vpc" {
 
 module "k8s" {
   source      = "github.com/GoogleCloudPlatform/terraform-google-k8s-gce"
-  network     = "${data.terraform-remote-state.vpc.network}"
-  subnetwork  = "${data.terraform-remote-state.vpc.subnetwork}"
+  network     = "${data.terraform_remote_state.vpc.network}"
+  subnetwork  = "${data.terraform_remote_state.vpc.subnetwork}"
   name        = "staging-cluster"
   k8s_version = "1.7.3"
   region      = "${var.region}"
