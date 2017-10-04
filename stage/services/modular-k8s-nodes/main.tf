@@ -12,6 +12,9 @@ terraform {
     project = "glds-gcp"
   }
 }
+
+#Data source to retrieve network and subnet names
+
 data "terraform_remote_state" "vpc" {
   backend   = "gcs"
 
@@ -21,7 +24,8 @@ data "terraform_remote_state" "vpc" {
     project = "glds-gpc"
   }
 }
-#Create the VMs
+
+#Create the VMs using GCE module
 
 module "k8s" {
   source      = "github.com/GoogleCloudPlatform/terraform-google-k8s-gce"
