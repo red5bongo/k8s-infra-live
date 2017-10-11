@@ -7,3 +7,4 @@ variable "region" {
 }
 
 variable "cluster-size" {}
+variable "cluster-name" {}

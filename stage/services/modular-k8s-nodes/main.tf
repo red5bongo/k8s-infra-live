@@ -30,7 +30,7 @@ module "k8s" {
   source      = "github.com/GoogleCloudPlatform/terraform-google-k8s-gce"
   network     = "${data.terraform_remote_state.vpc.network}"
   subnetwork  = "${data.terraform_remote_state.vpc.subnetwork}"
-  name        = "staging-cluster"
+  name        = "${var.cluster-name}"
   k8s_version = "1.7.3"
   region      = "${var.region}"
   zone        = "us-west1-a"
