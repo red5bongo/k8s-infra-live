@@ -1,10 +1,4 @@
-variable "project" {
-  default = "glds-gcp"
-}
-
-variable "region" {
-  default = "us-west1"
-}
-
-variable "cluster-size" {}
-variable "cluster-name" {}
+variable "project" {}
+variable "region" {}
+variable "cluster_size" {}
+variable "cluster_name" {}
