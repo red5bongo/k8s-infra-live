@@ -17,7 +17,6 @@ terraform {
 
 data "terraform_remote_state" "vpc" {
   backend   = "gcs"
-
   config {
     bucket  = "glds-k8s-remote-state-stage"
     path    = "vpc_stage/terraform.tfstate"
@@ -35,6 +34,6 @@ module "k8s" {
   k8s_version = "1.7.3"
   region      = "${var.region}"
   zone        = "us-west1-a"
-  num_nodes   = "3"
+  num_nodes   = "${var.cluster-size}"
   master_ip   = "10.240.0.10"
 }
