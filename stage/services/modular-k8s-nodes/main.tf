@@ -31,9 +31,9 @@ module "k8s" {
   network     = "${data.terraform_remote_state.vpc.network}"
   subnetwork  = "${data.terraform_remote_state.vpc.subnetwork}"
   name        = "${var.cluster_name}"
-  k8s_version = "1.7.3"
+  k8s_version = "${var.k8s_version}"
   region      = "${var.region}"
-  zone        = "us-west1-a"
+  zone        = "${var.zone}"
   num_nodes   = "${var.cluster_size}"
   master_ip   = "10.240.0.10"
 }
