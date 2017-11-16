@@ -30,4 +30,17 @@ resource "google_compute_subnetwork" "default" {
   region	= "us-west1"
 }
 
+#Create a firewall rule allowing SSH!
 
+resource "google_compute_firewall" "default" {
+  name		= "prod-firewall"
+  network	= "tf-k8s-production"
+  allow {
+    protocol = "icmp"
+  }
+  allow {
+    protocol = "tcp"
+    ports    = ["22"]
+  }
+  source_ranges = ["0.0.0.0/0"]
+}
