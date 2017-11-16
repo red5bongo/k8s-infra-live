@@ -36,4 +36,5 @@ module "k8s" {
   zone        = "${var.zone}"
   num_nodes   = "${var.cluster_size}"
   master_ip   = "10.240.0.10"
+  node_machine_type = "${var.machine_type}"
 }
