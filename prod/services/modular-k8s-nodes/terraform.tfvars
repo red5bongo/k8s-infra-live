@@ -1,0 +1,6 @@
+project = "glds-gcp"
+region = "us-west1"
+cluster_name = "prod-cluster"
+cluster_size = "3"
+k8s_version = "1.7.3"
+zone = "us-west1-a"
