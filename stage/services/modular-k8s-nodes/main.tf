@@ -33,7 +33,7 @@ module "k8s" {
   name        = "staging"
   k8s_version = "1.7.3"
   region      = "us-west1"
-  zone        = "$us-west1-a"
+  zone        = "us-west1-a"
   num_nodes   = "2"
   master_ip   = "10.240.0.10"
   node_machine_type = "n1-standard-1"
