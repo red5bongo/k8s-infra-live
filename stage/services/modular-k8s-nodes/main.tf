@@ -27,7 +27,7 @@ data "terraform_remote_state" "vpc" {
 #Create the VMs using GCE module
 
 module "k8s" {
-  source      = "github.com/GoogleCloudPlatform/terraform-google-k8s-gce"
+  source      = "github.com/GoogleCloudPlatform/terraform-google-k8s-gce?ref=v1.0.0"
   network     = "${data.terraform_remote_state.vpc.network}"
   subnetwork  = "${data.terraform_remote_state.vpc.subnetwork}"
   name        = "staging"
