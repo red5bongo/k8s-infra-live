@@ -34,7 +34,7 @@ resource "google_compute_subnetwork" "default" {
 
 resource "google_compute_firewall" "default" {
   name		= "staging-firewall"
-  network	= "tf-k8s-staging"
+  network	= "${google_compute_network.default.name}"
   allow {
     protocol = "icmp"
   }
