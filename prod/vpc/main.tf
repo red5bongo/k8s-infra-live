@@ -34,7 +34,7 @@ resource "google_compute_subnetwork" "default" {
 
 resource "google_compute_firewall" "default" {
   name		= "prod-firewall"
-  network	= "tf-k8s-production"
+  network	= "${google_compute_network.default.name}"
   allow {
     protocol = "icmp"
   }
