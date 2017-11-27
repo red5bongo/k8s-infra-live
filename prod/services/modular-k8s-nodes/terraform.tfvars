@@ -1,8 +1,2 @@
 project = "glds-gcp"
 region = "us-west1"
-cluster_name = "prod"
-cluster_size = "4"
-k8s_version = "1.7.3"
-zone = "us-west1-a"
-machine_type = "n1-standard-4"
-master_ip = "10.240.0.10"
